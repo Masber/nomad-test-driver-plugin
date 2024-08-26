@@ -388,6 +388,10 @@ func (d *HelloDriverPlugin) StartTask(cfg *drivers.TaskConfig) (*drivers.TaskHan
 		StderrPath: cfg.StderrPath,
 	}
 
+	// MASBER - sleep
+	fmt.Sprintf("##########################\n### Sleep 30 seconds ...\n##########################")
+	time.Sleep(30 * time.Second)
+
 	ps, err := exec.Launch(execCmd)
 	if err != nil {
 		pluginClient.Kill()
